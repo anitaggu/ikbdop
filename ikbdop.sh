@@ -8,7 +8,8 @@
 # USAGE: When the internal laptop keyboard goes defective, it usually results in continuous generation of some keyboard character, thereby making it impossible to do any commandline stuff. This shell program is an easy fix.
 #
 #
-
+# Author: anitaggu@gmail.com
+#
 
 #!/bin/bash
 
@@ -138,7 +139,7 @@ find_master_kbd_id()
 				#check if new master keyboard IDs are different.
 				if (masterid != id) {
 					printf("ERROR: Stored master keyboard ID %d is different from new ID %d\n", masterid, id);
-					exit -1 # More than two master keyboards found cannot safely reattach
+					exit -1 # More than one master keyboards found cannot safely reattach
 				}
 			}
 		}
