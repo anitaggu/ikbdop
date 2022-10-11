@@ -130,8 +130,9 @@ find_master_kbd_id()
 		}
 		/'"$masterkbd_pattern"'/ {
 			id=$0 #save entire string to id first
-			gsub(".*\[slave[[:space:]]*keyboard[[:space:]]*\(","", id) #remove preceding junk
-			gsub("\)\]","", id) #remove trailing )]
+			gsub(".*\\[slave[[:space:]]*keyboard[[:space:]]*\\(","", id) #remove preceding junk
+ 			gsub("\\)\\]","", id) #remove trailing )]
+			
 			if (masterid == -1) { 
 				masterid = id # initialize masterid 
 				#printf("Initialized masterid to %d\n", masterid)
